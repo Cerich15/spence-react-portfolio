@@ -18,7 +18,7 @@ import web3 from "../public/lexi.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
-import cv from './cv.pdf'  
+// import cv from './cv.pdf'  
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -54,7 +54,7 @@ export default function Home() {
               <li>
                 <a
                   className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href={cv}
+                  // href={cv}
                   download
                 >
                   Download CV

@@ -10,6 +10,6 @@ module.exports = module.exports = {
 
       return config
   },
-  // reactStrictMode: true,
-  // swcMinify: true,
+  reactStrictMode: true,
+  swcMinify: true,
 }
