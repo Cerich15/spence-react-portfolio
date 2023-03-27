@@ -13,7 +13,7 @@ import design from "../public/design.png";
 import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/miso.png";
-import web2 from "../public/digioffice.png";
+import web2 from "../public/web2.png";
 import web3 from "../public/lexi.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
