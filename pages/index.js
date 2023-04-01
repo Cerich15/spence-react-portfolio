@@ -14,14 +14,20 @@ import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/miso.png";
 import web2 from "../public/web2.png";
-import web3 from "../public/lexi.png";
+import lexi from "../public/lexi.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import pokedex from "../public/pokemon.png"
 import cv from './cv.pdf'  
+import flippy from '../public/flippy.png'
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+
+  const flippyStack = ['APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI']
+  const lexiStack = ['WEB APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
+  const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT',  'REACT-REDUX', 'MATERIAL-UI']
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -96,7 +102,7 @@ export default function Home() {
               programming and teaching.
             </p>
           </div>
-          <div className="lg:flex gap-10">
+          <div className="lg:flex gap-9">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image src={design} width={100} height={100} alt=""/>
               <h3 className="text-lg font-medium pt-8 pb-2  ">
@@ -143,7 +149,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-10">
+        {/* <section className="py-10">
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
@@ -180,7 +186,7 @@ export default function Home() {
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
-                src={web3}
+                src={lexi}
                 alt=""
               />
             </div>
@@ -215,7 +221,65 @@ export default function Home() {
               />
             </div>
           </div>
+        </section> */}
+
+        <section>
+           <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            Since the beginning of my journey as developer, I&apos;ve done remote work for
+              <span className="text-teal-500"> corporate </span>
+              I&apos;ve handled <span className="text-teal-500">several projects </span>
+              developing responsive web applications working with REST API
+            </p>
+            <h3 className="text-3xl dark:text-white mb-5">Projects that I worked on</h3>
+            <div className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
+              <div className="basis-2/5 bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white">
+                  <Image className="rounded-lg" src={flippy} alt=""/>
+                  <h2>Misorobotics Flippy</h2>
+                  <p>A robot as a service and intelligent automation solutions that assist chefs to make food at restaurants</p>
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap lg:flex-wrap">
+                      {
+                        flippyStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                          {stack}
+                        </div>)
+                      }
+                  </div>
+              </div>
+
+              <div className="basis-2/5 bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white">
+                   <Image className="rounded-lg" src={lexi} alt=""/>
+                  <h2>LEXI</h2>
+                  <p>A human resources web application that can be used to file leaves and overtime, 
+                    monitor employees filed leaves and overtime as well, process a check voucher, add employee’s 
+                    information.</p>
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
+                    {
+                      lexiStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                        {stack}
+                      </div>)
+                    }
+                </div>
+              </div>
+
+              <div className="basis-2/5 bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white">
+                   <Image className="rounded-lg" src={pokedex} alt=""/>
+                  <h2>POKEDEX</h2>
+                  <p>An electronic device created and designed to catalog and provide information regarding the 
+                    various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
+                    {
+                      pokedexStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                        {stack}
+                      </div>)
+                    }
+                </div>
+              </div>
+        
+            </div>
+          
+
         </section>
+
       </main>
     </div>
   );
