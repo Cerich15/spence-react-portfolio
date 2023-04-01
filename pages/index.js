@@ -239,7 +239,7 @@ export default function Home() {
                   <p>A robot as a service and intelligent automation solutions that assist chefs to make food at restaurants</p>
                   <div className="flex text-xs gap-2 flex-row whitespace-nowrap lg:flex-wrap">
                       {
-                        flippyStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="bg-slate-900 p-3 rounded-md drop-shadow-md">
                           {stack}
                         </div>)
                       }
@@ -254,7 +254,7 @@ export default function Home() {
                     information.</p>
                   <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
                     {
-                      lexiStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="bg-slate-900 p-3 rounded-md drop-shadow-md">
                         {stack}
                       </div>)
                     }
@@ -268,7 +268,7 @@ export default function Home() {
                     various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
                   <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
                     {
-                      pokedexStack.map(stack => <div className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="bg-slate-900 p-3 rounded-md drop-shadow-md">
                         {stack}
                       </div>)
                     }
