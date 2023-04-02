@@ -21,6 +21,7 @@ import web6 from "../public/web6.png";
 import pokedex from "../public/pokemon.png"
 import cv from './cv.pdf'  
 import flippy from '../public/flippy.png'
+import po_tracker from "../public/po_tracker.png"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -28,6 +29,7 @@ export default function Home() {
   const flippyStack = ['APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI']
   const lexiStack = ['WEB APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
   const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT',  'REACT-REDUX', 'MATERIAL-UI']
+  const poTrackerStack = ['WEB APPLICATION', 'REACT-JS',  'REDUX-SAGA', 'MATERIAL-UI']
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -83,7 +85,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/spencer-castro-65288715b"> <AiFillLinkedin /> </a>
               <a href="https://github.com/Cerich15"> <FaGithub/> </a>
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20">
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full lg:w-80 lg:h-80 md:w-50 md:h-50 relative overflow-hidden mt-20 sm:w-20 sm:h-20">
               <Image src={deved} layout="fill" objectFit="cover" alt="" />
             </div>
           </div>
@@ -233,46 +235,59 @@ export default function Home() {
             </p>
             <h3 className="text-3xl dark:text-white mb-5">Projects that I worked on</h3>
             <div className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
-              <div className="basis-2/5 bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white">
+              <div className="basis-2/5 dark:bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white rounded-lg">
                   <Image className="rounded-lg" src={flippy} alt=""/>
-                  <h2>Misorobotics Flippy</h2>
+                  <h2 className="text-teal-500">Misorobotics Flippy</h2>
                   <p>A robot as a service and intelligent automation solutions that assist chefs to make food at restaurants</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap lg:flex-wrap">
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap">
                       {
-                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
                           {stack}
                         </div>)
                       }
                   </div>
               </div>
 
-              <div className="basis-2/5 bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white">
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg">
                    <Image className="rounded-lg" src={lexi} alt=""/>
-                  <h2>LEXI</h2>
+                  <h2 className="text-teal-500">LEXI</h2>
                   <p>A human resources web application that can be used to file leaves and overtime, 
                     monitor employees filed leaves and overtime as well, process a check voucher, add employee’s 
                     information.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
                     {
-                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
                         {stack}
                       </div>)
                     }
                 </div>
               </div>
 
-              <div className="basis-2/5 bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white">
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg text-teal-500">
                    <Image className="rounded-lg" src={pokedex} alt=""/>
-                  <h2>POKEDEX</h2>
+                  <h2 className="text-teal-500">POKEDEX</h2>
                   <p>An electronic device created and designed to catalog and provide information regarding the 
                     various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap lg:flex-wrap" >
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
                     {
-                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="bg-slate-900 p-3 rounded-md drop-shadow-md">
+                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
                         {stack}
                       </div>)
                     }
-                </div>
+                  </div>
+              </div>
+
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg">
+                   <Image className="rounded-lg" src={po_tracker} alt=""/>
+                  <h2 className="text-teal-500">PO TRACKER</h2>
+                  <p>An web application used mainly for processing HR and Finance backoffice activities.</p>
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                    {
+                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
+                        {stack}
+                      </div>)
+                    }
+                  </div>
               </div>
         
             </div>
