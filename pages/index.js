@@ -32,9 +32,9 @@ export default function Home() {
   const lexiStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
   const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
   const poTrackerStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REDUX-SAGA', 'MATERIAL-UI']
-  const techStack = [<FaReact className={sizes}/>, <FaAngular className={sizes}/>, <FaHtml5 className={sizes}/>, 
-                      <FaPython className={sizes}/>, <SiJavascript className={sizes}/>, <SiTailwindcss className={sizes}/>, 
-                      <SiTypescript className={sizes}/>, <SiMysql className={sizes}/>]
+  const techStack = [<FaReact key="FaReact" className={sizes}/>, <FaAngular key="FaAngular" className={sizes}/>, <FaHtml5 key="FaHtml5" className={sizes}/>, 
+                      <FaPython key="FaPython" className={sizes}/>, <SiJavascript key="SiJavascript" className={sizes}/>, <SiTailwindcss key="SiTailwindcss" className={sizes}/>, 
+                      <SiTypescript key="SiTypescript" className={sizes}/>, <SiMysql key="SiMysql" className={sizes}/>]
 
 
   return (
