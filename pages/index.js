@@ -4,7 +4,8 @@ import {
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
-import {FaFacebook, FaGithub} from "react-icons/fa"
+import {FaFacebook, FaGithub, FaReact, FaAngular, FaHtml5, FaPython} from "react-icons/fa"
+import { SiJavascript, SiTailwindcss, SiTypescript, SiMysql } from "react-icons/si"
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { useState } from "react";
 import deved from "../public/formal-me_v2.png";
@@ -26,10 +27,15 @@ import po_tracker from "../public/po_tracker.png"
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
-  const flippyStack = ['APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI']
-  const lexiStack = ['WEB APPLICATION', 'REACT-JS',  'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
-  const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT',  'REACT-REDUX', 'MATERIAL-UI']
-  const poTrackerStack = ['WEB APPLICATION', 'REACT-JS',  'REDUX-SAGA', 'MATERIAL-UI']
+  const sizes = "w-[1.5em] h-[1.5em]";
+  const flippyStack = ['APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
+  const lexiStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
+  const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
+  const poTrackerStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REDUX-SAGA', 'MATERIAL-UI']
+  const techStack = [<FaReact className={sizes}/>, <FaAngular className={sizes}/>, <FaHtml5 className={sizes}/>, 
+                      <FaPython className={sizes}/>, <SiJavascript className={sizes}/>, <SiTailwindcss className={sizes}/>, 
+                      <SiTypescript className={sizes}/>, <SiMysql className={sizes}/>]
+
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -74,6 +80,7 @@ export default function Home() {
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Spencer Castro
             </h2>
+
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Front End Developer  &#60;/&gt;
             </h3>
@@ -85,9 +92,12 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/spencer-castro-65288715b"> <AiFillLinkedin /> </a>
               <a href="https://github.com/Cerich15"> <FaGithub/> </a>
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full lg:w-80 lg:h-80 md:w-50 md:h-50 relative overflow-hidden mt-20 sm:w-20 sm:h-20">
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
               <Image src={deved} layout="fill" objectFit="cover" alt="" />
             </div>
+            <ul className="flex flex-row gap-9 justify-center mt-5">
+              {techStack.map((tech, techIndex) => <li className="text-teal-500" key={techIndex}>{tech}</li>)}
+            </ul>
           </div>
         </section>
         <section>
