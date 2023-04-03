@@ -95,7 +95,7 @@ export default function Home() {
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
               <Image src={deved} layout="fill" objectFit="cover" alt="" />
             </div>
-            <ul className="flex flex-row gap-9 justify-center mt-5">
+            <ul className="flex flex-row gap-9 justify-center mt-5 flex-wrap">
               {techStack.map((tech, techIndex) => <li className="text-teal-500" key={techIndex}>{tech}</li>)}
             </ul>
           </div>
