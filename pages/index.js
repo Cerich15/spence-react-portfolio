@@ -133,7 +133,7 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:flex gap-9">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
+            {/* <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image src={design} width={100} height={100} alt=""/>
               <h3 className="text-lg font-medium pt-8 pb-2  ">
                 Beautiful Designs
@@ -147,7 +147,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Illustrator</p>
               <p className="text-gray-800 py-1">Figma</p>
               <p className="text-gray-800 py-1">Indesign</p>
-            </div>
+            </div> */}
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
               <Image src={code} width={100} height={100} alt=""/>
               <h3 className="text-lg font-medium pt-8 pb-2 ">
@@ -266,7 +266,7 @@ export default function Home() {
               <div className="basis-2/5 dark:bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white rounded-lg shadow-lg">
                   <Image className="rounded-lg" src={flippy} alt=""/>
                   <h2 className="text-teal-500">Misorobotics Flippy</h2>
-                  <p>A robot as a service and intelligent automation solutions that assist chefs to make food at restaurants</p>
+                  <p>A user interface that can control a robot/AutoBins, intelligent automation solutions that assist chefs to make food at restaurants</p>
                   <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap">
                       {
                         flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
