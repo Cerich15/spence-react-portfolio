@@ -7,7 +7,7 @@ import {
 import {FaFacebook, FaGithub, FaReact, FaAngular, FaHtml5, FaPython} from "react-icons/fa"
 import { SiJavascript, SiTailwindcss, SiTypescript, SiMysql } from "react-icons/si"
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import deved from "../public/formal-me_v2.png";
 import code from "../public/code.png";
 import design from "../public/design.png";
@@ -23,7 +23,7 @@ import pokedex from "../public/pokemon.png"
 import cv from './cv.pdf'  
 import flippy from '../public/flippy.png'
 import po_tracker from "../public/po_tracker.png"
-
+import python_automation from "../public/python_automate.jpg"
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -35,7 +35,20 @@ export default function Home() {
   const techStack = [<FaReact key="FaReact" className={sizes}/>, <FaAngular key="FaAngular" className={sizes}/>, <FaHtml5 key="FaHtml5" className={sizes}/>, 
                       <FaPython key="FaPython" className={sizes}/>, <SiJavascript key="SiJavascript" className={sizes}/>, <SiTailwindcss key="SiTailwindcss" className={sizes}/>, 
                       <SiTypescript key="SiTypescript" className={sizes}/>, <SiMysql key="SiMysql" className={sizes}/>]
+  const pythonAutomateStack = ['DATA ANALYTICS', 'PYTHON', 'MYSQL', 'SHELL/BASH']
 
+  const [sync, setSync] = useState(false)
+
+  const setDelay = () => {
+    if (darkMode === false) {
+      setSync(false)
+    } else {
+      setSync(true)
+    }
+    setTimeout(() => {
+      setDarkMode(!darkMode)
+    }, "1000");
+  }
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -47,41 +60,46 @@ export default function Home() {
       <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 className="font-burtons text-xl">SPENCE.</h1>
+            <h1 id="typing-text" className="font-burtons text-xl">SPENCE.</h1>
             <ul className="flex items-center">
               <li>
                 {
                   darkMode ?  
                     <BsFillSunFill
-                      onClick={() => setDarkMode(!darkMode)}
-                      className=" cursor-pointer text-2xl"
+                      onClick={setDelay}
+                      className={sync ? "animate-spin text-2xl" : "text-2xl cursor-pointer"}
                       title="View in light mode"
-                  /> :
+                    />
+                  :
                     <BsFillMoonStarsFill
-                      onClick={() => setDarkMode(!darkMode)}
-                      className=" cursor-pointer text-2xl"
+                      onClick={setDelay}
+                      className={sync ? "text-2xl cursor-pointer" : "animate-bounce text-2xl"}
                       title="View in dark mode"
                     />
                 }
 
               </li>
               <li>
-                <a
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href={cv}
-                  download
-                >
-                  Download CV
-                </a>
+                <div className="transition ease-in-out delay-150 bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+                    <a
+                    className=""
+                    href={cv}
+                    download
+                  >
+                    Download CV
+                  </a>
+            
+                </div>
+              
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10 py-10">
+          <div className="flex flex-col items-center justify-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Spencer Castro
             </h2>
 
-            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
+            <h3 className="text-2xl py-2 dark:text-white md:text-3xl animate-bounce">
               Front End Developer  &#60;/&gt;
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
@@ -93,7 +111,7 @@ export default function Home() {
               <a href="https://github.com/Cerich15"> <FaGithub/> </a>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
-              <Image src={deved} layout="fill" objectFit="cover" alt="" />
+              <Image src={deved} layout="fill" objectFit="cover" alt=""/>
             </div>
             <ul className="flex flex-row gap-9 justify-center mt-5 flex-wrap">
               {techStack.map((tech, techIndex) => <li className="text-teal-500" key={techIndex}>{tech}</li>)}
@@ -245,20 +263,20 @@ export default function Home() {
             </p>
             <h3 className="text-3xl dark:text-white mb-5">Projects that I worked on</h3>
             <div className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
-              <div className="basis-2/5 dark:bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white rounded-lg">
+              <div className="basis-2/5 dark:bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white rounded-lg shadow-lg">
                   <Image className="rounded-lg" src={flippy} alt=""/>
                   <h2 className="text-teal-500">Misorobotics Flippy</h2>
                   <p>A robot as a service and intelligent automation solutions that assist chefs to make food at restaurants</p>
                   <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap">
                       {
-                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
+                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                           {stack}
                         </div>)
                       }
                   </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg">
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={lexi} alt=""/>
                   <h2 className="text-teal-500">LEXI</h2>
                   <p>A human resources web application that can be used to file leaves and overtime, 
@@ -266,34 +284,47 @@ export default function Home() {
                     information.</p>
                   <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
                     {
-                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
+                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
                 </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg text-teal-500">
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={pokedex} alt=""/>
                   <h2 className="text-teal-500">POKEDEX</h2>
                   <p>An electronic device created and designed to catalog and provide information regarding the 
                     various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
                   <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
                     {
-                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
+                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
                   </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg">
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={po_tracker} alt=""/>
                   <h2 className="text-teal-500">PO TRACKER</h2>
                   <p>An web application used mainly for processing HR and Finance backoffice activities.</p>
                   <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
                     {
-                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500">
+                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                        {stack}
+                      </div>)
+                    }
+                  </div>
+              </div>
+
+              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
+                   <Image className="rounded-lg" src={python_automation} alt=""/>
+                  <h2 className="text-teal-500">SMD DAS</h2>
+                  <p>Writing a program that manipulates, transform and clean the data.</p>
+                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                    {
+                      pythonAutomateStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
