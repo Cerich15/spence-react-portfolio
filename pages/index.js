@@ -102,7 +102,7 @@ export default function Home() {
                   :
                     <BsFillMoonStarsFill
                       onClick={setDelay}
-                      className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce5s text-base sm:text-2xl"}
+                      className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce text-base sm:text-2xl"}
                       title="View in dark mode"
                     />
                 }
