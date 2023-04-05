@@ -77,7 +77,7 @@ export default function Home() {
                   :
                     <BsFillMoonStarsFill
                       onClick={setDelay}
-                      className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce text-base sm:text-2xl"}
+                      className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce5s text-base sm:text-2xl"}
                       title="View in dark mode"
                     />
                 }
@@ -103,7 +103,7 @@ export default function Home() {
               Spencer Castro
             </h2>
 
-            <h3 className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce">
+            <h3 className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s">
               Front End Developer  &#60;/&gt;
             </h3>
             <p className="text-center text-xs sm:text-md py-2 sm:py-5 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200 max-w-xl md:text-xl">
@@ -118,7 +118,7 @@ export default function Home() {
               <Image src={deved} layout="fill" objectFit="cover" alt=""/>
             </div>
             <ul className="text-xs sm:text-2xl flex flex-row gap-3 sm:gap-9 justify-center mt-7 sm:mt-10 flex-wrap">
-              {techStackLogos.map((tech, techIndex) => <li className="text-teal-500" key={techIndex}>{tech}</li>)}
+              {techStackLogos.map((tech, techIndex) => <li className="text-teal-500 animate-wiggle" key={techIndex}>{tech}</li>)}
             </ul>
           </div>
         </section>
@@ -143,7 +143,7 @@ export default function Home() {
                 <div className="text-sm sm:text-base dark:text-white flex flex-col gap-5">
                   <h1>Technologies I Use</h1>
                   <ul className="flex flex-row flex-wrap gap-10">
-                    {techStack.map((tech,techIndex) => <li className="flex items-center flex-row gap-2 " key={techIndex}><GoVerified className="dark:text-teal-600"/> {tech}</li>)}
+                    {techStack.map((tech,techIndex) => <li className="flex items-center flex-row" key={techIndex}><GoVerified className="dark:text-teal-600 animate-float mt-3"></GoVerified> <p>{tech}</p></li>)}
                   </ul>
                 </div>
                 

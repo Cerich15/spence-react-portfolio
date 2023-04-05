@@ -18,6 +18,8 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
+        bounce5s: 'bounce 4s infinite',
+        float: 'floating 1s ease-in-out infinite'
       },
       fontSize: {
         // sm: '0.8rem',
@@ -27,7 +29,18 @@ module.exports = {
         // '3xl': '1.953rem',
         // '4xl': '2.441rem',
         // '5xl': '3.052rem',
-      }
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        floating: {
+                  '0%': { transform: 'translate(-50%, -50%)' },
+                  '50%': { transform: 'translate(-50%, -60%)' },
+                  '100%': { transform: 'translate(-50%, -50%)' },
+                }
+        },
     },
   },
   plugins: [],

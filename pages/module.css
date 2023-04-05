@@ -11,3 +11,45 @@
         width: 14ch;
       }
 }
+
+
+/* .element {
+  animation: floating 1s ease-in-out infinite;
+} */
+
+/* @keyframes floating {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+} */
+
+
+/* .element:hover {
+  animation: wiggling 2s ease-in-out infinite;
+  display: flex;
+  flex-direction: row;
+} */
+
+/* @keyframes wiggling {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(4deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+} */
