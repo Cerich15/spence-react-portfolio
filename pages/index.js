@@ -43,7 +43,7 @@ export default function Home() {
 
   const [sync, setSync] = useState(false)
   const [onSpin, setOnSpin] = useState(false)
-  const socialsLogo = [<FaFacebook />, <AiFillLinkedin />, <FaGithub/>]
+  const socialsLogo = [<FaFacebook key="FaFacebook" />, <AiFillLinkedin key="AiFillLinkedin"/>, <FaGithub key="FaGithub"/>]
   const [myUrls] = useState({
     github: "https://github.com/Cerich15",
     facebook: "https://www.facebook.com/spencer.castro15",
