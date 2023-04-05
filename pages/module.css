@@ -1,7 +1,7 @@
 #typing-text {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 6s steps(15) infinite;
+  animation: typing 6s steps(12) infinite;
 }
 @keyframes typing {
     from {

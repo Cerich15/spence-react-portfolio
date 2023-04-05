@@ -63,28 +63,28 @@ export default function Home() {
       </Head>
       <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 id="typing-text" className="font-burtons text-xl">SPENCE.</h1>
-            <ul className="flex items-center">
-              <li>
+          <nav className="pt-10 sm:py-10 mb-0 sm:mb-12 flex justify-between items-center dark:text-white">
+            <h1 id="typing-text" className="font-burtons text-xs sm:text-xl">SPENCE.</h1>
+            <div className="flex items-center gap-3">
+              <div className="flex justify-end">
                 {
                   darkMode ?  
                     <BsFillSunFill
                       onClick={setDelay}
-                      className={sync ? "animate-spin text-2xl" : "text-2xl cursor-pointer"}
+                      className={sync ? "animate-spin text-base sm:text-2xl" : "text-base sm:text-2xl cursor-pointer"}
                       title="View in light mode"
                     />
                   :
                     <BsFillMoonStarsFill
                       onClick={setDelay}
-                      className={sync ? "text-2xl cursor-pointer" : "animate-bounce text-2xl"}
+                      className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce text-base sm:text-2xl"}
                       title="View in dark mode"
                     />
                 }
 
-              </li>
-              <li>
-                <div className="transition ease-in-out delay-150 bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+              </div>
+              <div>
+                <div className="flex items-center justify-center transition ease-in-out delay-150 bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white border-none rounded-md hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base h-7 w-[8em] sm:w-[8.6em] sm:h-9">
                     <a
                     className=""
                     href={cv}
@@ -95,21 +95,21 @@ export default function Home() {
             
                 </div>
               
-              </li>
-            </ul>
+              </div>
+            </div>
           </nav>
           <div className="flex flex-col text-center items-center justify-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+            <h2 className="text-2xl sm:text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Spencer Castro
             </h2>
 
-            <h3 className="text-2xl py-2 dark:text-white md:text-3xl animate-bounce">
+            <h3 className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce">
               Front End Developer  &#60;/&gt;
             </h3>
-            <p className="text-start text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+            <p className="text-center text-xs sm:text-md py-2 sm:py-5 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200 max-w-xl md:text-xl">
               I design and code web applications, with in-depth experience in ReactJs and more.
             </p>
-            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
+            <div className="text-2xl sm:text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <a href="https://www.facebook.com/spencer.castro15"> <FaFacebook /> </a>
               <a href="https://www.linkedin.com/in/spencer-castro-65288715b"> <AiFillLinkedin /> </a>
               <a href="https://github.com/Cerich15"> <FaGithub/> </a>
@@ -117,37 +117,37 @@ export default function Home() {
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
               <Image src={deved} layout="fill" objectFit="cover" alt=""/>
             </div>
-            <ul className="flex flex-row gap-9 justify-center mt-5 flex-wrap">
+            <ul className="text-xs sm:text-2xl flex flex-row gap-3 sm:gap-9 justify-center mt-7 sm:mt-10 flex-wrap">
               {techStackLogos.map((tech, techIndex) => <li className="text-teal-500" key={techIndex}>{tech}</li>)}
             </ul>
           </div>
         </section>
         <section>
-          <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Services I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+          <div className="flex flex-col mt-2 sm:mt-10">
+            <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Services I offer</h3>
+            <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
               I have been working in web development for more than a year, I &apos;ve done remote work for
               <span className="text-teal-500"> corporate </span>
               and collaborated with talented people to create digital products / web applications
               for both business and consumer use.
             </p>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
               I offer from a wide range of services, I like to code from scratch. Do you have an idea for your next 
               great website? Let&apos;s make it a reality..
             </p>
-            <h3 className="text-3xl py-1 dark:text-white ">What skills I have</h3>
           </div>
+          <h3 className="text-2xl sm:text-4xl py-1 dark:text-white mt-2 sm:mt-10">What skills I have</h3>
           <div className="lg:flex gap-9">
-          <div className="flex items-center flex-col gap-9 dark:bg-gray-800 rounded-xl my-10 flex-1 shadow-lg p-7">
-              <h1 className="font-semibold dark:text-teal-600">My Experience</h1>
-              <div className="dark:text-white flex flex-col gap-5">
-                <h1>Technologies I Use</h1>
-                <ul className="flex flex-row flex-wrap gap-10">
-                  {techStack.map((tech,techIndex) => <li className="flex items-center flex-row gap-2 " key={techIndex}><GoVerified className="dark:text-teal-600"/> {tech}</li>)}
-                </ul>
-              </div>
-              
-          </div>
+            <div className="flex items-center flex-col gap-9 dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
+                <h1 className="text-base sm:text-lg font-semibold dark:text-teal-600">My Experience</h1>
+                <div className="text-sm sm:text-base dark:text-white flex flex-col gap-5">
+                  <h1>Technologies I Use</h1>
+                  <ul className="flex flex-row flex-wrap gap-10">
+                    {techStack.map((tech,techIndex) => <li className="flex items-center flex-row gap-2 " key={techIndex}><GoVerified className="dark:text-teal-600"/> {tech}</li>)}
+                  </ul>
+                </div>
+                
+            </div>
             {/* <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
               <Image src={code} width={100} height={100} alt=""/>
               <h3 className="text-lg font-medium pt-8 pb-2 ">
@@ -169,11 +169,11 @@ export default function Home() {
               <p className="text-gray-800 py-1">Github</p>
               <p className="text-gray-800 py-1">Gitlab</p>
             </div> */}
-            <div className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-10 flex-1 shadow-lg p-7">
-              <h3 className="font-semibold dark:text-teal-600">Consulting</h3>
+            <div className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
+              <h3 className="text-base sm:text-lg font-semibold dark:text-teal-600">Consulting</h3>
               <div className="dark:text-white flex flex-col items-center">
-                <Image className="basis-2/5 flex-1" src={thumbsUp} />
-                <p className="basis-2/5 flex-1">
+                <Image src={thumbsUp} />
+                <p className="basis-2/5 text-sm sm:text-base">
                   Are you interested in feedback for your current project? I can
                   give you tips and tricks to level it up.
                 </p>
@@ -256,77 +256,79 @@ export default function Home() {
         </section> */}
 
         <section>
-           <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-            Since the beginning of my journey as developer, I&apos;ve done remote work for
-              <span className="text-teal-500"> corporate </span>
-              I&apos;ve handled <span className="text-teal-500">several projects </span>
-              developing responsive web applications working with REST API
-            </p>
-            <h3 className="text-3xl dark:text-white mb-5">Projects that I worked on</h3>
+          <div className="flex flex-col mt-2 sm:mt-10">
+            <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Portfofolio</h3>
+              <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+              Since the beginning of my journey as developer, I&apos;ve done remote work for
+                <span className="text-teal-500"> corporate </span>
+                I&apos;ve handled <span className="text-teal-500">several projects </span>
+                developing responsive web applications working with REST API
+              </p>
+          </div>
+            <h3 className="text-2xl sm:text-4xl dark:text-white mt-2 sm:mt-10 mb-5">Projects that I worked on</h3>
             <div className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
-              <div className="basis-2/5 dark:bg-gray-800 justify-center p-8 flex flex-1 flex-col gap-5 dark:text-white rounded-lg shadow-lg">
+              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 justify-center p-5 sm:p-8 flex flex-1 flex-col gap-3 sm:gap-5 dark:text-white rounded-lg shadow-lg">
                   <Image className="rounded-lg" src={flippy} alt=""/>
                   <h2 className="text-teal-500">Misorobotics Flippy</h2>
-                  <p>A user interface that can control a robot/AutoBins, intelligent automation solutions that assist chefs to make food at restaurants</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap">
+                  <p className="py-2 leading-5 sm:leading-8">A user interface that can control a robot/AutoBins, intelligent automation solutions that assist chefs to make food at restaurants</p>
+                  <div className="flex gap-2 text-xs flex-row whitespace-nowrap flex-wrap">
                       {
-                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                           {stack}
                         </div>)
                       }
                   </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
+              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={lexi} alt=""/>
                   <h2 className="text-teal-500">LEXI</h2>
-                  <p>A human resources web application that can be used to file leaves and overtime, 
+                  <p className="py-2 leading-5 sm:leading-8">A human resources web application that can be used to file leaves and overtime, 
                     monitor employees filed leaves and overtime as well, process a check voucher, add employee’s 
                     information.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
                     {
-                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
                 </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
+              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={pokedex} alt=""/>
                   <h2 className="text-teal-500">POKEDEX</h2>
-                  <p>An electronic device created and designed to catalog and provide information regarding the 
+                  <p className="py-2 leading-5 sm:leading-8">An electronic device created and designed to catalog and provide information regarding the 
                     various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
                     {
-                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
                   </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
+              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={po_tracker} alt=""/>
                   <h2 className="text-teal-500">PO TRACKER</h2>
-                  <p>An web application used mainly for processing HR and Finance backoffice activities.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                  <p className="py-2 leading-5 sm:leading-8">An web application used mainly for processing HR and Finance backoffice activities.</p>
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
                     {
-                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
                   </div>
               </div>
 
-              <div className="basis-2/5 dark:bg-gray-800 p-10 flex flex-1 gap-5 flex-col dark:text-white rounded-lg shadow-lg">
+              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
                    <Image className="rounded-lg" src={python_automation} alt=""/>
                   <h2 className="text-teal-500">SMD DAS</h2>
-                  <p>Writing a program that manipulates, transform and clean the data.</p>
-                  <div className="flex text-xs gap-2 flex-row items-baseline whitespace-nowrap flex-wrap" >
+                  <p className="py-2 leading-5 sm:leading-8">Writing a program that manipulates, transform and clean the data.</p>
+                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
                     {
-                      pythonAutomateStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
+                      pythonAutomateStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
                         {stack}
                       </div>)
                     }
