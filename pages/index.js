@@ -162,16 +162,18 @@ export default function Home() {
         <section>
           <div className="flex flex-col mt-2 sm:mt-10">
             <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Services I offer</h3>
-            <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
-              I have been working in web development for more than a year, I &apos;ve done remote work for
-              <span className="text-teal-500"> corporate </span>
-              and collaborated with talented people to create digital products / web applications
-              for both business and consumer use.
-            </p>
-            <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+            <div className="flex flex-col shadow-lg p-2 sm:p-4">
+              <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+                I have been working in web development for more than a year, I &apos;ve done remote work for
+                <span className="text-teal-500"> corporate </span>
+                and collaborated with talented people to create digital products / web applications
+                for both business and consumer use.
+              </p>
+              <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
               I offer from a wide range of services, I like to code from scratch. Do you have an idea for your next 
               great website? Let&apos;s make it a reality..
             </p>
+            </div>
           </div>
           <h3 className="text-2xl sm:text-4xl py-1 dark:text-white mt-2 sm:mt-10">What skills I have</h3>
           <div className="lg:flex gap-9">
