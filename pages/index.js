@@ -42,8 +42,13 @@ export default function Home() {
   const devTools = ['Bitbucket', 'Github', 'Gitlab']
 
   const [sync, setSync] = useState(false)
-
   const [onSpin, setOnSpin] = useState(false)
+  const socialsLogo = [<FaFacebook />, <AiFillLinkedin />, <FaGithub/>]
+  const [myUrls] = useState({
+    github: "https://github.com/Cerich15",
+    facebook: "https://www.facebook.com/spencer.castro15",
+    linkedIn: "https://www.linkedin.com/in/spencer-castro-65288715b"
+  })
 
   const setDelay = () => {
     if (darkMode === false) {
@@ -73,10 +78,6 @@ export default function Home() {
   useEffect(() => {
     isSpinning()
   },[onSpin])
-
-  useEffect(() => {
-    console.log(onSpin)
-  })
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -108,9 +109,11 @@ export default function Home() {
 
               </div>
               <div>
-                <div className="flex items-center justify-center transition ease-in-out delay-150 bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white border-none rounded-md hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base h-7 w-[8em] sm:w-[8.6em] sm:h-9">
+                <div className="flex items-center justify-center transition ease-in-out delay-150 
+                                bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
+                                hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
+                                h-7 w-[8em] sm:w-[8.6em] sm:h-9">
                     <a
-                    className=""
                     href={cv}
                     download
                   >
@@ -127,7 +130,7 @@ export default function Home() {
               Spencer Castro
             </h2>
 
-            <div className={onSpin && "animate-spin"}>
+            <div className={onSpin ? "animate-spin" : ""}>
               <h3 onClick={spin} className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s cursor-pointer">
                 Front End Developer &#60;/&gt;
               </h3>
@@ -137,9 +140,16 @@ export default function Home() {
               I design and code web applications, with in-depth experience in ReactJs and more.
             </p>
             <div className="text-2xl sm:text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <a href="https://www.facebook.com/spencer.castro15"> <FaFacebook /> </a>
-              <a href="https://www.linkedin.com/in/spencer-castro-65288715b"> <AiFillLinkedin /> </a>
-              <a href="https://github.com/Cerich15"> <FaGithub/> </a>
+              {socialsLogo.map((social, socialIndex) => 
+                <a className="hover:-translate-y-1 hover:scale-110" 
+                key={socialIndex} 
+                href={social?.type.name.toLowerCase().includes('linkedin') ? 
+                              myUrls.linkedIn : social?.type.name.toLowerCase().includes('github') ? 
+                              myUrls.github : myUrls.facebook }
+                >
+                  {social}
+                </a>
+                )}
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
               <Image src={deved} layout="fill" objectFit="cover" alt=""/>
