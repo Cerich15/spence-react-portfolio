@@ -43,6 +43,8 @@ export default function Home() {
 
   const [sync, setSync] = useState(false)
 
+  const [onSpin, setOnSpin] = useState(false)
+
   const setDelay = () => {
     if (darkMode === false) {
       setSync(false)
@@ -53,6 +55,28 @@ export default function Home() {
       setDarkMode(!darkMode)
     }, "1000");
   }
+
+  const spin = () => {
+    if (onSpin === false) {
+      setOnSpin(!onSpin)
+    }
+  }
+
+  const isSpinning = () => {
+    if (onSpin) {
+      setTimeout(() => {
+        setOnSpin(!onSpin)
+      }, "1000");
+    }
+  }
+  
+  useEffect(() => {
+    isSpinning()
+  },[onSpin])
+
+  useEffect(() => {
+    console.log(onSpin)
+  })
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -103,9 +127,12 @@ export default function Home() {
               Spencer Castro
             </h2>
 
-            <h3 className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s">
-              Front End Developer  &#60;/&gt;
-            </h3>
+            <div className={onSpin && "animate-spin"}>
+              <h3 onClick={spin} className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s cursor-pointer">
+                Front End Developer &#60;/&gt;
+              </h3>
+            </div>
+          
             <p className="text-center text-xs sm:text-md py-2 sm:py-5 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200 max-w-xl md:text-xl">
               I design and code web applications, with in-depth experience in ReactJs and more.
             </p>
@@ -118,7 +145,7 @@ export default function Home() {
               <Image src={deved} layout="fill" objectFit="cover" alt=""/>
             </div>
             <ul className="text-xs sm:text-2xl flex flex-row gap-3 sm:gap-9 justify-center mt-7 sm:mt-10 flex-wrap">
-              {techStackLogos.map((tech, techIndex) => <li className="text-teal-500 animate-wiggle" key={techIndex}>{tech}</li>)}
+              {techStackLogos.map((tech, techIndex) => <li className="text-teal-500 animate-wiggle hover:animate-spin" key={techIndex}>{tech}</li>)}
             </ul>
           </div>
         </section>
