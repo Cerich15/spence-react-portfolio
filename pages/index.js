@@ -131,7 +131,7 @@ export default function Home() {
             </h2> */}
 
             <div className="glitch-wrapper">
-                <div style={{color: "pink"}} className="glitch" data-glitch="Spencer Castro">Spencer Castro</div>
+                <div style={{color: "pink"}} className="glitch" data-glitch="Spencer Castro"><h2 className="text-teal-300">Spencer Castro</h2></div>
             </div>
 
             <div className={onSpin ? "animate-spin" : ""}>
