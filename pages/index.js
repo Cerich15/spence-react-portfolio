@@ -126,9 +126,13 @@ export default function Home() {
             </div>
           </nav>
           <div className="flex flex-col text-center items-center justify-center p-10 py-10">
-            <h2 className="text-2xl sm:text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+            {/* <h2 className="text-2xl sm:text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Spencer Castro
-            </h2>
+            </h2> */}
+
+            <div className="glitch-wrapper">
+                <div style={{color: "pink"}} className="glitch" data-glitch="Spencer Castro">Spencer Castro</div>
+            </div>
 
             <div className={onSpin ? "animate-spin" : ""}>
               <h3 onClick={spin} className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s cursor-pointer">
