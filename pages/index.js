@@ -134,11 +134,17 @@ export default function Home() {
                 <div style={{color: "pink"}} className="glitch" data-glitch="Spencer Castro"><h2 className="text-teal-300">Spencer Castro</h2></div>
             </div>
 
-            <div className={onSpin ? "animate-spin" : ""}>
+            <div className="glitch-wrapper-noise">
+              <div className="glitch-noise" data-glitch="Frontend Developer &#60;/&gt;">
+                <h1 className="text-gray-800 dark:text-gray-200">Frontend Developer &#60;/&gt;</h1>
+                </div>
+          </div>
+
+            {/* <div className={onSpin ? "animate-spin" : ""}>
               <h3 onClick={spin} className="text-sm sm:text-2xl py-0 sm:py-2 dark:text-white md:text-3xl animate-bounce5s cursor-pointer">
                 Front End Developer &#60;/&gt;
               </h3>
-            </div>
+            </div> */}
           
             <p className="text-center text-xs sm:text-md py-2 sm:py-5 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200 max-w-xl md:text-xl">
               I design and code web applications, with in-depth experience in ReactJs and more.
