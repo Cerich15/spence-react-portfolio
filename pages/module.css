@@ -55,6 +55,12 @@
 } */
 
 
+:hover#glass-morphism{
+  background: rgba(0,116,197,0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  /* border: 1px solid rgba(0,116,197,0.25); */
+}
 
 .glitch-wrapper {
   width: 100%;

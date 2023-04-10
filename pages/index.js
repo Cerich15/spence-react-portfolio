@@ -1,8 +1,6 @@
 import Head from "next/head";
 import {
-  AiFillTwitterCircle,
   AiFillLinkedin,
-  AiFillYoutube,
 } from "react-icons/ai";
 import {FaFacebook, FaGithub, FaReact, FaAngular, FaHtml5, FaPython} from "react-icons/fa"
 import { SiJavascript, SiTailwindcss, SiTypescript, SiMysql } from "react-icons/si"
@@ -10,45 +8,30 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go"
 import { useEffect, useState } from "react";
 import deved from "../public/formal-me_v2.png";
-import code from "../public/code.png";
-import design from "../public/design.png";
 import Image from "next/image";
-import web1 from "../public/miso.png";
-import web2 from "../public/web2.png";
 import lexi from "../public/lexi.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
 import pokedex from "../public/pokemon.png"
 import cv from './cv.pdf'  
 import flippy from '../public/flippy.png'
 import po_tracker from "../public/po_tracker.png"
 import python_automation from "../public/python_automate.jpg"
 import thumbsUp from "../public/thumbsup.gif"
+import Container from "../components/Container/_app";
+import Project from "./components/Project/_app";
+import { flippyStack, lexiStack, myUrls, poTrackerStack, pokedexStack, projects, pythonAutomateStack, techStack } from "../constants/const";
+import Projects from "./components/Projects/_app";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
   const sizes = "w-[1.5em] h-[1.5em]";
-  const flippyStack = ['APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
-  const lexiStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
-  const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
-  const poTrackerStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REDUX-SAGA', 'MATERIAL-UI']
+
   const techStackLogos = [<FaReact key="FaReact" className={sizes}/>, <FaAngular key="FaAngular" className={sizes}/>, <FaHtml5 key="FaHtml5" className={sizes}/>, 
                       <FaPython key="FaPython" className={sizes}/>, <SiJavascript key="SiJavascript" className={sizes}/>, <SiTailwindcss key="SiTailwindcss" className={sizes}/>, 
                       <SiTypescript key="SiTypescript" className={sizes}/>, <SiMysql key="SiMysql" className={sizes}/>]
-  const pythonAutomateStack = ['DATA ANALYTICS', 'PYTHON', 'MYSQL', 'SHELL/BASH']
-
-  const techStack = ['ReactJs','Angular', 'Python', 'MySQL', 'HTML','Javascript','Typescript', 'CSS', 'Material UI', 'Tailwind']
-  const devTools = ['Bitbucket', 'Github', 'Gitlab']
 
   const [sync, setSync] = useState(false)
   const [onSpin, setOnSpin] = useState(false)
   const socialsLogo = [<FaFacebook key="FaFacebook" />, <AiFillLinkedin key="AiFillLinkedin"/>, <FaGithub key="FaGithub"/>]
-  const [myUrls] = useState({
-    github: "https://github.com/Cerich15",
-    facebook: "https://www.facebook.com/spencer.castro15",
-    linkedIn: "https://www.linkedin.com/in/spencer-castro-65288715b"
-  })
 
   const setDelay = () => {
     if (darkMode === false) {
@@ -108,7 +91,7 @@ export default function Home() {
                 }
 
               </div>
-              <div>
+              <div className="flex gap-3 flex-wrap flex-row">
                 <div className="flex items-center justify-center transition ease-in-out delay-150 
                                 bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
                                 hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
@@ -118,6 +101,19 @@ export default function Home() {
                     download
                   >
                     Download CV
+                  </a>
+            
+                </div>
+
+                <div className="flex items-center justify-center transition ease-in-out delay-150 
+                                bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
+                                hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
+                                h-7 w-[8em] sm:w-[8.6em] sm:h-9">
+                    <a
+                    href={cv}
+                    download
+                  >
+                    Contact Me
                   </a>
             
                 </div>
@@ -197,27 +193,6 @@ export default function Home() {
                 </div>
                 
             </div>
-            {/* <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} alt=""/>
-              <h3 className="text-lg font-medium pt-8 pb-2 ">
-                Frontend Developer
-              </h3>
-              <p className="py-2">
-                I like to code from scratch. Do you have an idea for your next great website? Let&apos;s make it a
-                reality.
-              </p>
-              <h4 className="py-4 text-teal-600">Technologies I Use</h4>
-              <p className="text-gray-800 py-1">ReactJs</p>
-              <p className="text-gray-800 py-1">HTML</p>
-              <p className="text-gray-800 py-1">CSS/MUI/Tailwind</p>
-              <p className="text-gray-800 py-1">Javascript/Typescript</p>
-              <p className="text-gray-800 py-1">Angular</p>
-
-              <h4 className="py-4 text-teal-600">Dev Tools</h4>
-              <p className="text-gray-800 py-1">Bitbucket</p>
-              <p className="text-gray-800 py-1">Github</p>
-              <p className="text-gray-800 py-1">Gitlab</p>
-            </div> */}
             <div className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
               <h3 className="text-base sm:text-lg font-semibold dark:text-teal-600">Consulting</h3>
               <div className="dark:text-white flex flex-col items-center">
@@ -230,80 +205,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section className="py-10">
-          <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Since the beginning of my journey as developer, I&apos;ve done remote work for
-              <span className="text-teal-500"> corporate </span>
-              I&apos;ve handled <span className="text-teal-500">several projects </span>
-              developing responsive web applications working with REST API
-            </p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 ">
-              <Image
-                className="rounded-lg object-cover center"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web1}
-                alt=""
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web2}
-                alt=""
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={lexi}
-                alt=""
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web4}
-                alt=""
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web5}
-                alt=""
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web6}
-                alt=""
-              />
-            </div>
-          </div>
-        </section> */}
-
         <section>
           <div className="flex flex-col mt-2 sm:mt-10">
             <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Portfofolio</h3>
@@ -315,80 +216,12 @@ export default function Home() {
               </p>
           </div>
             <h3 className="text-2xl sm:text-4xl dark:text-white mt-2 sm:mt-10 mb-5">Projects that I worked on</h3>
-            <div className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
-              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 justify-center p-5 sm:p-8 flex flex-1 flex-col gap-3 sm:gap-5 dark:text-white rounded-lg shadow-lg">
-                  <Image className="rounded-lg" src={flippy} alt=""/>
-                  <h2 className="text-teal-500">Misorobotics Flippy</h2>
-                  <p className="py-2 leading-5 sm:leading-8">A user interface that can control a robot/AutoBins, intelligent automation solutions that assist chefs to make food at restaurants</p>
-                  <div className="flex gap-2 text-xs flex-row whitespace-nowrap flex-wrap">
-                      {
-                        flippyStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
-                          {stack}
-                        </div>)
-                      }
-                  </div>
-              </div>
-
-              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
-                   <Image className="rounded-lg" src={lexi} alt=""/>
-                  <h2 className="text-teal-500">LEXI</h2>
-                  <p className="py-2 leading-5 sm:leading-8">A human resources web application that can be used to file leaves and overtime, 
-                    monitor employees filed leaves and overtime as well, process a check voucher, add employee’s 
-                    information.</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
-                    {
-                      lexiStack.map((stack, stackIndex) => <div key={stackIndex}  className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
-                        {stack}
-                      </div>)
-                    }
-                </div>
-              </div>
-
-              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
-                   <Image className="rounded-lg" src={pokedex} alt=""/>
-                  <h2 className="text-teal-500">POKEDEX</h2>
-                  <p className="py-2 leading-5 sm:leading-8">An electronic device created and designed to catalog and provide information regarding the 
-                    various species of Pokémon featured in the Pokémon video game, anime and manga series.</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
-                    {
-                      pokedexStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
-                        {stack}
-                      </div>)
-                    }
-                  </div>
-              </div>
-
-              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
-                   <Image className="rounded-lg" src={po_tracker} alt=""/>
-                  <h2 className="text-teal-500">PO TRACKER</h2>
-                  <p className="py-2 leading-5 sm:leading-8">An web application used mainly for processing HR and Finance backoffice activities.</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
-                    {
-                      poTrackerStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
-                        {stack}
-                      </div>)
-                    }
-                  </div>
-              </div>
-
-              <div className="text-xs sm:text-base basis-2/5 dark:bg-gray-800 p-5 sm:p-8 flex flex-1 gap-3 sm:gap-5 flex-col dark:text-white rounded-lg shadow-lg">
-                   <Image className="rounded-lg" src={python_automation} alt=""/>
-                  <h2 className="text-teal-500">SMD DAS</h2>
-                  <p className="py-2 leading-5 sm:leading-8">Writing a program that manipulates, transform and clean the data.</p>
-                  <div className="flex text-xs gap-2 flex-row whitespace-nowrap flex-wrap" >
-                    {
-                      pythonAutomateStack.map((stack, stackIndex) => <div key={stackIndex} className="dark:bg-slate-900 p-2 sm:p-3 rounded-md drop-shadow-md text-teal-500 border-black border-[1px]">
-                        {stack}
-                      </div>)
-                    }
-                  </div>
-              </div>
-        
-            </div>
-          
-
+            <Container className="flex flex-col lg:flex-row gap-4 lg:flex-wrap" style={{paddingBottom: "1em"}}>
+              <Project
+                title={["flippy", "lexi", "pokedex", "po_tracker", "python_automation"]}
+              />
+            </Container>
         </section>
-
       </main>
     </div>
   );
