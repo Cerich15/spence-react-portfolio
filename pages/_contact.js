@@ -30,8 +30,8 @@ const contact = () => {
     progress: undefined,
     theme: "dark"
     });
-  const router = useRouter();
-  const { title } = router.query
+  const Router = useRouter();
+  const { title } = Router.query
   const darkMode = title === 'true' && true
 
   const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID

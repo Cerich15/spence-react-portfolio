@@ -53,9 +53,9 @@ export default function Home() {
     }
   }
   
-  useEffect(() => {
-    isSpinning()
-  },[onSpin])
+  // useEffect(() => {
+  //   isSpinning()
+  // },[onSpin])
 
   return (
     <Container className={darkMode ? "dark" : ""}>
@@ -185,7 +185,7 @@ export default function Home() {
             <Container className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
               <h3 className="text-base sm:text-lg font-semibold dark:text-teal-600">Consulting</h3>
               <Container className="dark:text-white flex flex-col items-center">
-                <Image src={thumbsUp} />
+                <Image src={thumbsUp} alt="" />
                 <p className="basis-2/5 text-sm sm:text-base">
                   Are you interested in feedback for your current project? I can
                   give you tips and tricks to level it up.
