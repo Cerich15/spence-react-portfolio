@@ -56,7 +56,7 @@ const Contact = () => {
     if(info.user_name.length !== 0 && info.user_email.length !== 0 && info.message.length !== 0) {
 
         if (emailValidation(info.user_email)) {
-            emailjs.send(serviceID, templateID, info, publicKey)
+            emailjs.send(serviceID, templateID, info, 'kVKxJUW5KjYI2VJ1s')
                 .then((result) => {
                     console.log(result.text, "<Res");
                     setInfo({...initState})
