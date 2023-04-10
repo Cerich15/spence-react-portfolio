@@ -1,13 +1,13 @@
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import Container from '../components/Container'
 import { useRouter } from 'next/router'
 import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import { cleanObj, emailValidation } from '../helper';
+import { toast } from 'react-toastify';
+import { emailValidation } from '../helper';
 import Link from 'next/link';
 
-const contact = () => {
+const Contact = () => {
 
  const notifySuccess = (message) => toast.success(message, {
     position: "top-right",
@@ -122,4 +122,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
