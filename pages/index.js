@@ -98,67 +98,73 @@ export default function Home() {
         </Head>
         <main className="bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
           <section className="min-h-screen">
-            <nav className="pt-10 sm:py-10 mb-0 sm:mb-12 flex justify-between flex-nowrap items-center dark:text-white">
-              <h1 id="typing-text" className="font-burtons text-xs sm:text-xl">SPENCE.</h1>
-              <Container className="flex items-center gap-3">
-                <Container className="flex justify-end">
-                  {
-                    darkMode ?  
-                      <BsFillSunFill
-                        onClick={setDelay}
-                        className={sync ? "animate-spin text-base sm:text-2xl" : "text-base sm:text-2xl cursor-pointer"}
-                        title="View in light mode"
-                      />
-                    :
-                      <BsFillMoonStarsFill
-                        onClick={setDelay}
-                        className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce text-base sm:text-2xl"}
-                        title="View in dark mode"
-                      />
-                  }
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <nav className="pt-10 sm:py-10 mb-0 sm:mb-12 flex justify-between flex-nowrap items-center dark:text-white">
+                <h1 id="typing-text" className="font-burtons text-xs sm:text-xl">SPENCE.</h1>
+                <Container className="flex items-center gap-3">
+                  <Container className="flex justify-end">
+                    {
+                      darkMode ?  
+                        <BsFillSunFill
+                          onClick={setDelay}
+                          className={sync ? "animate-spin text-base sm:text-2xl" : "text-base sm:text-2xl cursor-pointer"}
+                          title="View in light mode"
+                        />
+                      :
+                        <BsFillMoonStarsFill
+                          onClick={setDelay}
+                          className={sync ? "text-base sm:text-2xl cursor-pointer" : "animate-bounce text-base sm:text-2xl"}
+                          title="View in dark mode"
+                        />
+                    }
 
-                </Container>
-                <Container className="flex gap-1 sm:gap-3 flex-wrap flex-row">
-                  <Container className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
-                                  bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
-                                  hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
-                                  h-7 w-[7em] sm:w-[8.6em] sm:h-9">
-                      <a
-                        href={cv}
-                        download
-                    >
-                      Download CV
-                    </a>
-              
                   </Container>
+                  <Container className="flex gap-1 sm:gap-3 flex-wrap flex-row">
+                    <Container className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
+                                    bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
+                                    hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
+                                    h-7 w-[7em] sm:w-[8.6em] sm:h-9">
+                        <a
+                          href={cv}
+                          download
+                      >
+                        Download CV
+                      </a>
+                
+                    </Container>
 
-                  <Container id="contact-me-container" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
-                                  bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
-                                  hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
-                                  h-7 w-[8em] sm:w-[8.6em] sm:h-9">
-                      <Link
-                        href={{pathname: "/_contact", query: {
-                          title: darkMode
-                        }}}
-                    >
-                        Contact Me
-                      
-                    </Link>
-                  </Container>
-                  <Container id="contact-me-icon" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
-                                  bg-cyan-500 text-to-teal-500 border-none rounded-md hover:-translate-y-1 
-                                  hover:scale-110 hover:bg-indigo-500 duration-300 w-[2em]">
-                      <Link
-                        href={{pathname: "/_contact", query: {
-                          title: darkMode
-                        }}}
-                    >
-                      <AiOutlineMail />
-                    </Link>
+                    <Container id="contact-me-container" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
+                                    bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
+                                    hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
+                                    h-7 w-[8em] sm:w-[8.6em] sm:h-9">
+                        <Link
+                          href={{pathname: "/_contact", query: {
+                            title: darkMode
+                          }}}
+                      >
+                          Contact Me
+                        
+                      </Link>
+                    </Container>
+                    <Container id="contact-me-icon" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
+                                    bg-cyan-500 text-to-teal-500 border-none rounded-md hover:-translate-y-1 
+                                    hover:scale-110 hover:bg-indigo-500 duration-300 w-[2em]">
+                        <Link
+                          href={{pathname: "/_contact", query: {
+                            title: darkMode
+                          }}}
+                      >
+                        <AiOutlineMail />
+                      </Link>
+                    </Container>
                   </Container>
                 </Container>
-              </Container>
-            </nav>
+              </nav>
+            </motion.div>
             <Container className="flex flex-col text-center items-center justify-center p-10 py-10">
               <motion.div
                   layout
@@ -190,13 +196,13 @@ export default function Home() {
                         animate={{ x: "100px"}}
                         transition={{ type: "spring", bounce: 0.5 }}
                      >
-                      <a className="hover:-translate-y-1 hover:scale-110" 
-                        key={socialIndex} 
-                        href={social?.type.name.toLowerCase().includes('linkedin') ? 
-                                      myUrls.linkedIn : social?.type.name.toLowerCase().includes('github') ? 
-                                      myUrls.github : myUrls.facebook }
-                        >
-                          {social}
+                        <a className="hover:-translate-y-1 hover:scale-110" 
+                          key={socialIndex} 
+                          href={social?.type.name.toLowerCase().includes('linkedin') ? 
+                                        myUrls.linkedIn : social?.type.name.toLowerCase().includes('github') ? 
+                                        myUrls.github : myUrls.facebook }
+                          >
+                            {social}
                         </a>
                       </motion.div>
                     )}
@@ -212,61 +218,102 @@ export default function Home() {
           </section>
           <section>
             <Container className="flex flex-col mt-2 sm:mt-10">
-              <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Services I offer</h3>
-              <Container className="flex flex-col shadow-lg p-2 sm:p-4">
-                <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
-                  I have been working in web development for more than a year, I &apos;ve done remote work for
-                  <span className="text-teal-500"> corporate </span>
-                  and collaborated with talented people to create digital products / web applications
-                  for both business and consumer use.
-                </p>
-                <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
-                I offer from a wide range of services, I like to code from scratch. Do you have an idea for your next 
-                great website? Let&apos;s make it a reality..
-              </p>
-              </Container>
-            </Container>
-            <h3 className="text-2xl sm:text-4xl py-1 dark:text-white mt-2 sm:mt-10">What skills I have</h3>
-            <Container className="lg:flex gap-9">
-              <Container className="flex items-center flex-col gap-9 dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
-                  <h1 className="text-base sm:text-lg font-semibold dark:text-teal-600">My Experience</h1>
-                  <Container className="text-sm sm:text-base dark:text-white flex flex-col gap-5">
-                    <h1>Technologies I Experienced with</h1>
-                    <ul className="flex flex-row flex-wrap gap-12">
-                      {techStack.map((tech,techIndex) => <li className="flex flex-row" key={techIndex}><GoVerified className="dark:text-teal-600 animate-float mt-3"></GoVerified> <p>{tech}</p></li>)}
-                    </ul>
-                  </Container>
-              </Container>
-              <Container className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
-                <h3 className="text-base sm:text-lg font-semibold dark:text-teal-600">Consulting</h3>
-                <Container className="dark:text-white flex flex-col items-center">
-                  <Image src={thumbsUp} alt="" />
-                  <p className="basis-2/5 text-sm sm:text-base">
-                    Are you interested in feedback for your current project? I can
-                    give you tips and tricks to level it up.
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Services I offer</h3>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Container className="flex flex-col shadow-lg p-2 sm:p-4">
+                  <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+                    I have been working in web development for more than a year, I &apos;ve done remote work for
+                    <span className="text-teal-500"> corporate </span>
+                    and collaborated with talented people to create digital products / web applications
+                    for both business and consumer use.
                   </p>
+                  <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+                  I offer from a wide range of services, I like to code from scratch. Do you have an idea for your next 
+                  great website? Let&apos;s make it a reality..
+                 </p>
+                </Container>
+              </motion.div>
+           
+            </Container>
+            <motion.div
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               transition={{delay: 0.2}}
+            >
+              <h3 className="text-2xl sm:text-4xl py-1 dark:text-white mt-2 sm:mt-10">What skills I have</h3>
+            </motion.div>
+            <motion.div
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               transition={{ delay: 0.2, }}
+            >
+              <Container className="lg:flex gap-9">
+                <Container className="flex items-center flex-col gap-9 dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
+                    <h1 className="text-base sm:text-lg font-semibold dark:text-teal-600">My Experience</h1>
+                    <Container className="text-sm sm:text-base dark:text-white flex flex-col gap-5">
+                      <h1>Technologies I Experienced with</h1>
+                      <ul className="flex flex-row flex-wrap gap-12">
+                        {techStack.map((tech,techIndex) => <li className="flex flex-row" key={techIndex}><GoVerified className="dark:text-teal-600 animate-float mt-3"></GoVerified> <p>{tech}</p></li>)}
+                      </ul>
+                    </Container>
+                </Container>
+                <Container className="flex items-center flex-col dark:bg-gray-800 rounded-xl my-3 sm:my-5 flex-1 shadow-lg p-5 sm:p-7">
+                  <h3 className="text-base sm:text-lg font-semibold dark:text-teal-600">Consulting</h3>
+                  <Container className="dark:text-white flex flex-col items-center">
+                    <Image src={thumbsUp} alt="" />
+                    <p className="basis-2/5 text-sm sm:text-base">
+                      Are you interested in feedback for your current project? I can
+                      give you tips and tricks to level it up.
+                    </p>
+                  </Container>
                 </Container>
               </Container>
-            </Container>
+            </motion.div>
+            
           </section>
           <section>
             <Container className="flex flex-col mt-2 sm:mt-10">
-              <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Portfofolio</h3>
-              <Container className="flex flex-col shadow-lg p-2 sm:p-4">
-                <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
-                  Since the beginning of my journey as developer, I&apos;ve done remote work for
-                    <span className="text-teal-500"> corporate </span>
-                    I&apos;ve handled <span className="text-teal-500">several projects </span>
-                    developing responsive web applications working with REST API
-                  </p>
-              </Container>
-              
+              <motion.div
+                 initial={{ opacity: 0 }}
+                 whileInView={{ opacity: 1 }}
+                 transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-2xl sm:text-4xl py-1 dark:text-white ">Portfofolio</h3>
+              </motion.div>  
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Container className="flex flex-col shadow-lg p-2 sm:p-4">
+                  <p className="text-xs sm:text-base py-2 leading-5 sm:leading-8 text-gray-800 dark:text-gray-200">
+                    Since the beginning of my journey as developer, I&apos;ve done remote work for
+                      <span className="text-teal-500"> corporate </span>
+                      I&apos;ve handled <span className="text-teal-500">several projects </span>
+                      developing responsive web applications working with REST API
+                    </p>
+                </Container>
+              </motion.div>
             </Container>
-              <h3 className="text-2xl sm:text-4xl dark:text-white mt-2 sm:mt-10 mb-5">Projects that I worked on</h3>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-2xl sm:text-4xl dark:text-white mt-2 sm:mt-10 mb-5">Projects that I worked on</h3>
+              </motion.div>
               <Container className="flex flex-col lg:flex-row gap-4 lg:flex-wrap p-2 sm:p-4" style={{paddingBottom: "1em"}}>
-                <Project
-                  title={projectsName}
-                />
+                <Project title={projectsName} />
               </Container>
           </section>
         </main>

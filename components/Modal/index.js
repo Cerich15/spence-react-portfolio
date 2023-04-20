@@ -3,7 +3,7 @@ import { useTransition, animated } from '@react-spring/web'
 import { styled } from '@stitches/react'
 import * as Dialog from '@radix-ui/react-dialog'
 
-export default function Modal () {
+export default function Modal ({title, label}) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleDialogChange = (isOpen) => setIsOpen(isOpen)
@@ -28,7 +28,7 @@ export default function Modal () {
       <Trigger>
         <TriggerShadow />
         <TriggerEdge />
-        <TriggerLabel>Open Modal</TriggerLabel>
+        <TriggerLabel>{label}</TriggerLabel>
       </Trigger>
       <Dialog.Portal forceMount>
         {transition((style, isOpen) => (
@@ -54,7 +54,7 @@ export default function Modal () {
                                     </svg>
                                 </CloseButton>
                               </DialogHeader>
-                         <Title>Aha you found me!</Title>
+                         <Title>{title}</Title>
                      </Content>
                 </div>
              
