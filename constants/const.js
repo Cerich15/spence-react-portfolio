@@ -4,6 +4,7 @@ import python_automation from "../public/python_automate.jpg"
 import lexi from "../public/lexi.png";
 import pokedex from "../public/pokemon.png"
 
+const projectsName = ["flippy", "lexi", "pokedex", "po_tracker", "python_automation"]
 const flippyStack = ['APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
 const lexiStack = ['WEB APPLICATION', 'REACT-JS', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI', 'STYLED-COMPONENTS']
 const pokedexStack = ['WEB APPLICATION', 'REACT', 'TYPESCRIPT', 'REST-API', 'REACT-REDUX', 'MATERIAL-UI']
@@ -49,7 +50,7 @@ const myUrls = {
     linkedIn: "https://www.linkedin.com/in/spencer-castro-65288715b"
   }
 
-const techStack = ['ReactJs','Angular', 'Python', 'MySQL', 'HTML','Javascript','Typescript', 'CSS', 'Material UI', 'Tailwind']
+const techStack = ['ReactJs','NextJs','Angular', 'Python', 'MySQL', 'HTML','Javascript','Typescript', 'CSS', 'Material UI', 'Tailwind']
 const devTools = ['Bitbucket', 'Github', 'Gitlab']
 
 export {
@@ -61,5 +62,6 @@ export {
         lexiStack, 
         pokedexStack, 
         poTrackerStack, 
-        pythonAutomateStack
+        pythonAutomateStack,
+        projectsName
        }
