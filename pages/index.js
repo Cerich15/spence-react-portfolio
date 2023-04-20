@@ -153,7 +153,7 @@ export default function Home() {
                     <Container id="contact-me-icon" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
                                     bg-cyan-500 text-to-teal-500 border-none rounded-md hover:-translate-y-1 
                                     hover:scale-110 hover:bg-indigo-500 duration-300 w-[2em]">
-                        <Link
+                      <Link
                           href={{pathname: "/_contact", query: {
                             title: darkMode
                           }}}
@@ -195,6 +195,7 @@ export default function Home() {
                      <motion.div
                         animate={{ x: "100px"}}
                         transition={{ type: "spring", bounce: 0.5 }}
+                        key={socialIndex}
                      >
                         <a className="hover:-translate-y-1 hover:scale-110" 
                           key={socialIndex} 
