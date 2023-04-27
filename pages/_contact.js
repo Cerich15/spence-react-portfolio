@@ -105,7 +105,7 @@ const Contact = () => {
                     </Container>
                         <Container className="flex flex-col justify-center items-center gap-5">
                             <h1 className='text-teal-500 text-3xl font-bold'>Contact</h1>
-                            <Modal title="More content here" label="Hi" />
+                            {/* <Modal title="More content here" label="Hi" /> */}
                             <Container
                                 className="flex flex-col gap-3 sm:gap-5 w-[15em] sm:w-[22em]">
                                 <input 
