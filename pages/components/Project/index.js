@@ -5,6 +5,16 @@ import { projects } from '../../../constants/const';
 import { motion } from 'framer-motion';
 
 const Project = ({title}) => {
+
+  const projectTransition = (index) => {
+    const initial_delay = 0.2
+    if (index === 0) return { delay: initial_delay}
+    else if (index === 1) return { delay:  initial_delay + 0.2}
+    else if (index === 2) return { delay:  initial_delay + 0.2}
+    else if (index === 3) return { delay:  initial_delay + 0.4}
+    else return { delay: initial_delay + 0.2 }
+  }
+
   return (
    <>
       {
@@ -16,9 +26,8 @@ const Project = ({title}) => {
             className={`text-xs sm:text-base basis-2/5 dark:bg-gray-800 justify-center p-5 sm:p-8 flex flex-1 flex-col gap-3 sm:gap-5 dark:text-white rounded-lg shadow-lg`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={projectTransition(tIndex)}
           >
-               {/* <motion.div> */}
               <Image src={projects[t].image} alt=''/>
               <h2 className='text-teal-500'>{projects[t].name.toUpperCase()}</h2>
               <p className="py-2 leading-5 sm:leading-8">{projects[t].description}</p>
@@ -30,7 +39,6 @@ const Project = ({title}) => {
                     </Container>)
                 }
               </Container>
-              {/* </motion.div> */}
            </motion.div>
           )
       }

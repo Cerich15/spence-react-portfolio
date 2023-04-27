@@ -150,6 +150,7 @@ export default function Home() {
                         
                       </Link>
                     </Container>
+                    {/* having an error because of this link */}
                     <Container id="contact-me-icon" className="cursor-pointer flex items-center justify-center transition ease-in-out delay-150 
                                     bg-cyan-500 text-to-teal-500 border-none rounded-md hover:-translate-y-1 
                                     hover:scale-110 hover:bg-indigo-500 duration-300 w-[2em]">
@@ -209,9 +210,25 @@ export default function Home() {
                     )}
                 </Container>
               </motion.div>
-              <Container className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
-                <Image src={deved} layout="fill" objectFit="cover" alt=""/>
-              </Container>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                  }
+                }}
+              >
+                <Container className="mx-auto bg-gradient-to-b from-teal-500 rounded-full h-32 w-32 md:w-80 md:h-80 relative overflow-hidden mt-20">
+                  <Image src={deved} layout="fill" objectFit="cover" alt=""/>
+                </Container>
+              </motion.div>
+           
               <ul className="text-xs sm:text-2xl flex flex-row gap-3 sm:gap-9 justify-center mt-7 sm:mt-10 flex-wrap">
                 {techStackLogos.map((tech, techIndex) => <li className="text-teal-500 animate-wiggle hover:animate-spin" key={techIndex}>{tech}</li>)}
               </ul>
@@ -313,7 +330,7 @@ export default function Home() {
               >
                 <h3 className="text-2xl sm:text-4xl dark:text-white mt-2 sm:mt-10 mb-5">Projects that I worked on</h3>
               </motion.div>
-              <Container className="flex flex-col lg:flex-row gap-4 lg:flex-wrap p-2 sm:p-4" style={{paddingBottom: "1em"}}>
+              <Container className="flex flex-col lg:flex-row gap-4 lg:flex-wrap self-start p-2 sm:p-4" style={{paddingBottom: "1em"}}>
                 <Project title={projectsName} />
               </Container>
           </section>
