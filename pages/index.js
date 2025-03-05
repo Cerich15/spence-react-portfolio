@@ -18,6 +18,7 @@ import { myUrls, projectsName, techStack } from "../constants/const";
 import Link from "next/link";
 import Modal from "../components/Modal";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -29,6 +30,17 @@ export default function Home() {
     duration: 1.8,
     // delay: 0.2
     };
+
+  const notifyError = (message) => toast.error(message, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark"
+    });
 
   const techStackLogos = [<FaReact key="FaReact" className={sizes}/>, <FaAngular key="FaAngular" className={sizes}/>, <FaHtml5 key="FaHtml5" className={sizes}/>, 
                       <FaPython key="FaPython" className={sizes}/>, <SiJavascript key="SiJavascript" className={sizes}/>, <SiTailwindcss key="SiTailwindcss" className={sizes}/>, 
@@ -128,12 +140,17 @@ export default function Home() {
                                     bg-cyan-500 text-to-teal-500 text-white border-none rounded-md hover:-translate-y-1 
                                     hover:scale-110 hover:bg-indigo-500 duration-300 whitespace-nowrap text-xs sm:text-base 
                                     h-7 w-[7em] sm:w-[8.6em] sm:h-9">
-                        <a
+                        {/* <a
                           href={cv}
                           download
                       >
                         Download CV
-                      </a>
+                      </a> */}
+                      <button onClick={() => 
+                        notifyError("Hold up, working on updating my CV")
+                      }>
+                        Download CV
+                      </button>
                 
                     </Container>
 

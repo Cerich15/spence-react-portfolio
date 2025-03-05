@@ -46,7 +46,7 @@ const projects = {
 
 const myUrls = {
     github: "https://github.com/Cerich15",
-    facebook: "https://www.facebook.com/spencer.castro15",
+    facebook: "https://www.facebook.com/",
     linkedIn: "https://www.linkedin.com/in/spencer-castro-65288715b"
   }
 
