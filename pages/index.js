@@ -8,7 +8,7 @@ import { SiJavascript, SiTailwindcss, SiTypescript, SiMysql } from "react-icons/
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go"
 import { useEffect, useState } from "react";
-import deved from "../public/formal-me_v2.png";
+import deved from "../public/me_formal.jpg";
 import Image from "next/image";
 import cv from './cv.pdf'  
 import thumbsUp from "../public/thumbsup.gif"
